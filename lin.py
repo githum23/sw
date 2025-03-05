@@ -1,20 +1,9 @@
-def search(arr, N, x):
+my_array = [64, 34, 25, 12, 22, 11, 90, 5]
 
-    for i in range(0, N):
-        if (arr[i] == x):
-            return i
-    return -1
+n = len(my_array)
+for i in range(n-1):
+    for j in range(n-i-1):
+        if my_array[j] > my_array[j+1]:
+            my_array[j], my_array[j+1] = my_array[j+1], my_array[j]
 
-
-# Driver Code
-if __name__ == "__main__":
-    arr = [2, 3, 4, 10, 40]
-    x = 10
-    N = len(arr)
-
-    # Function call
-    result = search(arr, N, x)
-    if(result == -1):
-        print("Element is not present in array")
-    else:
-        print("Element is present at index", result)
+print("Sorted array:", my_array)
